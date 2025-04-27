@@ -1,0 +1,54 @@
+# 🚀 Simple Python Calculator with IF Conditions and Character Operations
+
+# Define functions for basic arithmetic operations
+def add(x, y):
+    """Return the sum of x and y."""
+    return x + y
+
+def subtract(x, y):
+    """Return the difference of x and y."""
+    return x - y
+
+def multiply(x, y):
+    """Return the product of x and y."""
+    return x * y
+
+def divide(x, y):
+    """Return the division of x by y. Handle division by zero."""
+    if y == 0:
+        return "Error: Division by zero is not allowed"
+    return x / y
+
+# Main function to interact with the user
+def calculator():
+    print("🧮 Welcome to the Simple Calculator!")
+
+    try:
+        num1 = float(input("Enter the first number: "))
+        num2 = float(input("Enter the second number: "))
+    except ValueError:
+        print("Error: Please enter valid numbers.")
+        return
+
+    print("\nSelect operation:")
+    print("Addition (+)")
+    print("Subtraction (-)")
+    print("Multiplication (*)")
+    print("Division (/)")
+    
+    choice = input("Enter operation (+, -, *, /): ")
+
+    # Using IF conditions for operation selection
+    if choice == '+':
+        print(f"Result: {add(num1, num2)}")
+    elif choice == '-':
+        print(f"Result: {subtract(num1, num2)}")
+    elif choice == '*':
+        print(f"Result: {multiply(num1, num2)}")
+    elif choice == '/':
+        print(f"Result: {divide(num1, num2)}")
+    else:
+        print("Error: Invalid operation. Please enter one of (+, -, *, /).")
+
+# Execute the program
+calculator()
